@@ -8,6 +8,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import locale from 'element-ui/lib/locale/lang/zh-CN' // lang i18n 此处使用中文语言环境
 
 import '@/styles/index.scss' // global css
+import '@/styles/show.css'
 
 import App from './App'
 import router from './router' //  引入路由模块

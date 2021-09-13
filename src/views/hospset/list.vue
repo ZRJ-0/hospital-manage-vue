@@ -21,14 +21,14 @@
     <!-- banner列表 -->
     <el-table :data="list" stripe style="width: 100%;text-align:left" @selection-change="handleSelectionChange">
 
-      <el-table-column type="selection" width="55" />
-      <el-table-column type="index" width="50" />
-      <el-table-column prop="hosname" label="医院名称" />
-      <el-table-column prop="hoscode" label="医院编号" />
-      <el-table-column prop="apiUrl" label="api基础路径" width="200" />
-      <el-table-column prop="contactsName" label="联系人姓名" />
-      <el-table-column prop="contactsPhone" label="联系人手机" />
-      <el-table-column label="状态" width="80">
+      <el-table-column type="selection" width="55" align="center" />
+      <el-table-column type="index" label="序号" width="50" align="center" />
+      <el-table-column prop="hosname" label="医院名称" align="center" />
+      <el-table-column prop="hoscode" label="医院编号" align="center" />
+      <el-table-column prop="apiUrl" label="api基础路径" width="200" align="center" />
+      <el-table-column prop="contactsName" label="联系人姓名" align="center" />
+      <el-table-column prop="contactsPhone" label="联系人手机" align="center" />
+      <el-table-column label="状态" width="80" align="center">
         <template slot-scope="scope">
           {{ scope.row.status === 1 ? '可用' : '不可用' }}
         </template>
@@ -45,7 +45,7 @@
             @click="lockHospSet(scope.row.id,0)"></el-button>
           <el-button v-if="scope.row.status==0" type="danger" size="mini" icon="el-icon-unlock" circle
             @click="lockHospSet(scope.row.id,1)"></el-button>
-            <!-- 点击编辑按钮   回显指定id的数据 -->
+          <!-- 点击编辑按钮   回显指定id的数据 -->
           <router-link :to="'/hospSet/edit/'+scope.row.id">
             <el-button type="primary" size="mini" icon="el-icon-edit" circle style="margin-left:10px;"></el-button>
           </router-link>
